@@ -6,14 +6,13 @@
 /*   By: hnemmass <hnemmass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/17 15:18:40 by hnemmass          #+#    #+#             */
-/*   Updated: 2026/05/19 19:08:39 by hnemmass         ###   ########.fr       */
+/*   Updated: 2026/05/19 19:19:59 by hnemmass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
-#include <exception>
 
 template <typename T> class Array
 {
@@ -28,8 +27,10 @@ template <typename T> class Array
 		Array &operator=(const Array &other);
 		~Array();
 
-		T &operator[](size_t index);
-		const T &operator[](size_t index) const;
+		T &operator[](unsigned int index);
+		const T &operator[](unsigned int index) const;
 
-		unsigned int size();
+		unsigned int size() const;
 };
+
+#include "Array.tpp"

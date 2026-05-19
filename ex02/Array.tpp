@@ -6,7 +6,7 @@
 /*   By: hnemmass <hnemmass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 16:29:07 by hnemmass          #+#    #+#             */
-/*   Updated: 2026/05/19 19:09:28 by hnemmass         ###   ########.fr       */
+/*   Updated: 2026/05/19 19:18:11 by hnemmass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ Array<T>::~Array()
 }
 
 template <typename T>
-T &Array<T>::operator[](size_t index)
+T &Array<T>::operator[](unsigned int index)
 {
 	if (index >= _size)
 		throw std::runtime_error ("index is out of bound");
@@ -56,7 +56,7 @@ T &Array<T>::operator[](size_t index)
 }
 
 template <typename T>
-const T &Array<T>::operator[](size_t index) const
+const T &Array<T>::operator[](unsigned int index) const
 {
 	if (index >= _size)
 		throw std::runtime_error ("index is out of bound");
@@ -64,7 +64,7 @@ const T &Array<T>::operator[](size_t index) const
 }
 
 template <typename T>
-unsigned int Array<T>::size()
+unsigned int Array<T>::size() const
 {
 	return (_size);
 }
