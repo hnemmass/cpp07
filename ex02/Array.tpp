@@ -6,7 +6,7 @@
 /*   By: hnemmass <hnemmass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 16:29:07 by hnemmass          #+#    #+#             */
-/*   Updated: 2026/05/19 19:18:11 by hnemmass         ###   ########.fr       */
+/*   Updated: 2026/05/20 16:07:13 by hnemmass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Array<T>::Array(): _array(NULL), _size(0)
 {}
 
 template <typename T>
-Array<T>::Array(unsigned int n): _array(new T[n]), _size(n)
+Array<T>::Array(unsigned int n): _array(new T[n]()), _size(n)
 {}
 
 template <typename T>
