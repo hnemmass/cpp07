@@ -6,7 +6,7 @@
 /*   By: hnemmass <hnemmass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 19:57:47 by hnemmass          #+#    #+#             */
-/*   Updated: 2026/05/15 19:29:00 by hnemmass         ###   ########.fr       */
+/*   Updated: 2026/10/19 00:13:45 by hnemmass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,18 @@ int main()
 {
 	const int s[] = {1, 2, 3, 4, 5};
 	const size_t size = sizeof(s) / sizeof(s[0]);
+	std::string *a = NULL;
 	
+	::iter(a, size, print<std::string>);
 	::iter(s, size, print<int>);
-
+	
 	std::cout << "-------- test1 --------" << std::endl;
-	::iter(s, size, isodd);
+	::iter<const int, size_t, void (*)(const int&)>(s, size, print<int>);
 	
 	std::cout << "-------- test2 --------" << std::endl;
+	::iter(s, size, isodd);
+	
+	std::cout << "-------- test3 --------" << std::endl;
 	const std::string c[] = {"hello", "world", "hahaH69Hahah"};
 	const size_t size1 = sizeof(c) / sizeof(c[0]);
 	::iter(c, size1, Toupper);
